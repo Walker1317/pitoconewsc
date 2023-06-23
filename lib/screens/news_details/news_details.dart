@@ -18,6 +18,7 @@ class NewsDetails extends StatefulWidget {
 class _NewsDetailsState extends State<NewsDetails> {
   News? news;
   bool error = false;
+  final _key = GlobalKey();
 
   _getNews() async {
     try{
@@ -115,7 +116,7 @@ class _NewsDetailsState extends State<NewsDetails> {
             ),
             const SizedBox(height: 100,),
             Divider(color: Colors.grey[800],),
-            const Rodape(),
+            Rodape(key: _key,)
           ],
         ),
       ),
